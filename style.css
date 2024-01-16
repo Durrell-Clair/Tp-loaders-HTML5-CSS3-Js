@@ -1,0 +1,574 @@
+/* Configuration de la prise en compte des marges et des bordures */
+*, ::before, ::after {
+    box-sizing: border-box;
+}
+
+/* Stylisation du body */
+body {
+    margin: 0;
+    padding: 0;
+    height: 120vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #f1f1f1;
+}
+
+/* Propriétés de notre container principal */
+.container {
+    width: 1000px;
+    height: 800px;
+    margin-top: 200px;
+    margin-bottom: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+/* Propriétés de notre classe anim */
+.anim {
+    width: 200px;
+    height: 200px;
+    border: 5px solid #333;
+    margin: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+/* Animation 1 */
+
+/* Propriétés de notre classe anim1 */
+.anim1 {
+    width: 64px;
+    height: 64px;
+    border: 6px solid rgb(128, 128, 128);
+    border-color: #333 transparent #333 transparent;
+    border-radius: 50%;
+    animation: tourne 1.2s linear infinite;
+}
+/* Définition de notre animation tourne */
+@keyframes tourne {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+
+
+/*----------------------------- Animation 2 ----------------------------------------*/
+
+/* Prpriétés de notre classe anim2 */
+.anim2 {
+    width: 40px;
+    height: 40px;
+    position: relative;
+    margin: 0 auto;
+}
+/* Propriétés communes aux classe rond1 rond2 */
+.rond1, .rond2 {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-color: #333;
+    opacity: 0.6;
+    position: absolute;
+    animation: rebondir 2s infinite ease-in-out;
+}
+/* Durée de l'animation de la classe rond2 */
+.rond2 {
+    animation-delay: -1s;
+}
+/* Définition de notre animation rebondir */
+@keyframes rebondir {
+    0% {
+        transform: scale(0);
+    }
+    50% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(0);
+    }
+}
+
+/*----------------------------- Animation 3 ------------------------------------*/
+
+/* Prpriétés de notre classe anim3 */
+.anim3 {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* Propriétés des element de classe anim3 enfants des div */
+.anim3 > div {
+    background: #333;
+    height: 100%;
+    width: 6px;
+    margin: 0 2px;
+    animation: etire 1.2s infinite ease-in-out;
+}
+/* Delais d'execution de l'animation pour les classe rect2, rect3, rect4 et rect5 */
+.anim3 .rect2 {
+    animation-delay: -1.1s;
+}
+.anim3 .rect3 {
+    animation-delay: -1s;
+}
+.anim3 .rect4 {
+    animation-delay: -0.9s;
+}
+.anim3 .rect5 {
+    animation-delay: -0.8s;
+}
+/* Definition de notre animation etire */
+@keyframes etire {
+    0%, 40%, 100% {
+        transform: scaleY(0.4);
+    }
+    20% {
+        transform: scaleY(1);
+    }
+}
+
+/*----------------------------------- Animation 4 --------------------------------*/
+
+/* Prpriétés des div de notre classe anim4 */
+.anim4 > div {
+    width: 18px;
+    height: 18px;
+    background: #333;
+    display: block;
+    border-radius: 50%;
+    display: inline-block;
+    animation: troisPointsGrow 0.5s infinite ease-in-out alternate;
+}
+/* Delais d'execution de l'animation pour la classe bounce1 */
+.anim4 .bounce1 {
+    animation-delay: -0.3s;
+}
+/* Delais d'execution de l'animation pour la classe bounce2 */
+.anim4 .bounce2 {
+    animation-delay: -0.15s;
+}
+/* Definition de notre animation troisPointsGrow */
+@keyframes troisPointsGrow {
+    0% {
+        transform: scale(0);
+    }
+    100% {
+        transform: scale(1); 
+    }
+}
+
+/*------------------------------------------ Animation 5 ---------------------------------------*/
+/* Propriété de la classe box5 */
+.box5 {
+    background: #333;
+}
+/* Propriété de la classe anim5 */
+.anim5 {
+    display: flex;
+}
+/* Propriétés de la classe lettre */
+.lettre {
+    color: #484848;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 30px;
+    animation: flash 1.4s linear infinite;
+}
+/* Temps d'execution de l'animation relatifs à chaque element de classe lettre */
+.lettre:nth-child(1){
+   animation-delay: 0.1s; 
+}
+.lettre:nth-child(2){
+    animation-delay: 0.2s;
+}
+.lettre:nth-child(3){
+    animation-delay: 0.3s;
+}
+.lettre:nth-child(4){
+    animation-delay: 0.4s;
+}
+.lettre:nth-child(5){
+    animation-delay: 0.5s;
+}
+.lettre:nth-child(6){
+    animation-delay: 0.6s;
+}
+.lettre:nth-child(7){
+    animation-delay: 0.7s;
+}
+.lettre:nth-child(8){
+    animation-delay: 0.8s;
+}
+.lettre:nth-child(9){
+    animation-delay: 0.9s;
+}
+/* Definition de notre animation flash */
+@keyframes flash {
+    0% {
+        color: #484848;
+        text-shadow: none;
+    }
+    90% {
+        color: #484848;
+        text-shadow: none;
+    }
+    100% {
+        color: #fff900;
+        text-shadow: 0 0 7px #fff900;
+    }
+}
+
+
+
+/*-------------------------------------- Animation 6 ---------------------------------------*/
+
+
+/* Propriétés de la classe animate */
+.animate {
+    text-align: center;
+    font-family: Helvetica;
+    animation: load 1s infinite ease alternate;
+}
+/* Definition de notre animation load */
+@keyframes load {
+    60% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0.3;
+        filter: blur(5px);
+        letter-spacing: 3px;
+    }
+}
+
+/*----------------------------------- Animation 7 ---------------------------------------*/
+
+/* Propriétés de la classe rondFast */
+.rondFast {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background: linear-gradient(45deg, gold, salmon);
+    border: 1px solid #333;
+    animation: spinspin 2.4s infinite;
+}
+/* Definition de notre animation spinspin */
+@keyframes spinspin {
+    0% {
+        animation-timing-function: cubic-bezier(0.5, 0, 1, 0.5);
+        transform: rotateY(0deg);
+    }
+    50% {
+        transform: rotateY(1800deg);
+        animation-timing-function: cubic-bezier(0, 0.5, 0.5, 1);
+    }
+    100% {
+        transform: rotateY(3600deg);
+    }
+}   
+
+/*------------------------------------------ Animation 8 -------------------------------------------*/
+
+/* Prpriétés de notre classe anim8 */
+.anim8 {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* Propriétés de la classe loader */
+.loader {
+    display: block;
+    position: relative;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 3px solid transparent;
+    border-top-color: #31708e;
+    animation: spin 2s linear infinite;
+}
+/* Propriétés du pseudo element befor de la classe loader */
+.loader::before {
+    content: "";
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    right: 5px;
+    bottom: 5px;
+    border-radius: 50%;
+    border: 3px solid transparent;
+    border-top-color: #5085a5;
+    animation: spin 3s linear infinite;
+}
+/* Propriétés du pseudo element after de la classe loader */
+.loader::after {
+    content: "";
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    right: 15px;
+    bottom: 15px;
+    border-radius: 50%;
+    border: 3px solid transparent;
+    border-top-color: #8fc1e3;
+    animation: spin 1.5s linear infinite;
+}
+/* Definition de notre animation spin */
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/*---------------------------------------- Animation 9 --------------------------------------------*/
+
+/* Prpriétés de notre classe anim9 */
+.anim9 {
+    width: 200px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* Prpriétés de notre classe pointc1 */
+.pointc1 {
+    margin: 0px 5px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #000;
+    animation: monte 0.3s alternate infinite;
+}
+/* Definition des propriétés relatives à chaque div de classe pointc1 */
+.pointc1:nth-child(1) {
+    animation-delay: 0.1s;
+}
+.pointc1:nth-child(2) {
+    animation-delay: 0.2s;
+}
+.pointc1:nth-child(2) {
+    animation-delay: 0.3s;
+}
+/* Definition de notre animation monte */
+@keyframes monte {
+    100% {
+        transform: translateY(-30px);
+    }
+}
+
+
+
+/* Animation 10 */
+
+/* Proprités de la classe anim10 */
+.anim10 {
+    width: 80px;
+    height: 80px;
+    position: relative;
+}
+/* Proprités des div de la classe anim10 */
+.anim10 div {
+    transform-origin: 40px 40px;
+    animation: anim10 1.2s linear infinite;
+}
+
+/* Definition des elements after des div enfants de anim10 */
+.anim10 div::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 3px;
+    left: 37px;
+    width: 6px;
+    height: 18px;
+    border-radius: 20%;
+    background: #333;
+}
+
+/* Definition des propriétés relatives aux div enfants de la classe anim10 */
+.anim10 div:nth-child(1) {
+    transform: rotate(0deg);
+    animation-delay: -1.1s;
+}
+.anim10 div:nth-child(2) {
+    transform: rotate(30deg);
+    animation-delay: -1s;
+}
+.anim10 div:nth-child(3) {
+    transform: rotate(60deg);
+    animation-delay: -0.9s;
+}
+.anim10 div:nth-child(4) {
+    transform: rotate(90deg);
+    animation-delay: -0.8s;
+}
+.anim10 div:nth-child(5) {
+    transform: rotate(120deg);
+    animation-delay: -0.7s;
+}
+.anim10 div:nth-child(6) {
+    transform: rotate(150deg);
+    animation-delay: -0.6s;
+}
+.anim10 div:nth-child(7) {
+    transform: rotate(180deg);
+    animation-delay: -0.5s;
+}
+.anim10 div:nth-child(8) {
+    transform: rotate(210deg);
+    animation-delay: -0.4s;
+}
+.anim10 div:nth-child(9) {
+    transform: rotate(240deg);
+    animation-delay: -0.3s;
+}
+.anim10 div:nth-child(10) {
+    transform: rotate(270deg);
+    animation-delay: -0.2s;
+}
+.anim10 div:nth-child(11) {
+    transform: rotate(300deg);
+    animation-delay: -0.1s;
+}
+.anim10 div:nth-child(12) {
+    transform: rotate(330deg);
+    animation-delay: 0s;
+}
+/* Definition des clés d'animations des div de la classe anim10 */
+@keyframes anim10 {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+
+
+/* Animation 11 */
+
+
+/* Background du premier enfant de la classe anim (div de classe anim11) */
+.anim:nth-child(1) {
+    background: #fff;
+}
+
+/* Propriétés des span de la classe anim11  */
+.anim11 {
+    width: 142px;
+    height: 40px;
+    background: #fff;
+    filter: contrast(20);
+    position: relative;
+}
+
+/* Propriétés des span de la classe dots  */
+.anim11 .dot {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    top: 12px;
+    left: 15px;
+    filter: blur(4px);
+    background: #000;
+    border-radius: 50%;
+    animation: point 2.8s infinite;
+}
+
+/* Propriétés des span de la classe dots  */
+.anim11 .dots span {
+    display: block;
+    float: left;
+    width: 16px;
+    height: 16px;
+    margin-left: 16px;
+    filter: blur(4px);
+    background: #000;
+    border-radius: 50%;
+}
+
+/* Propriétés de la classe dots */
+.anim11 .dots {
+    margin-top: 12px;
+    margin-left: 31px;
+    animation: points 2.8s infinite;
+}
+/* Definition des clés d'animations de la span de class dot */
+@keyframes point {
+    50% {
+        transform: translateX(96px);
+    }
+}
+
+/* Definition de la clé d'animation des span de la sous class dots */
+@keyframes points {
+    50% {
+        transform: translateX(-31px);
+    }
+}
+
+/* Animation 12 */
+
+/* Propriétés de la class panneau */
+.panneau {
+    width: 40px;
+    height: 40px;
+    background: #333;
+    animation: movepan 1.2s infinite ease-in-out;
+}
+
+/* Definition des clés d'animations du .panneau */
+@keyframes movepan {
+    0% {
+        transform: perspective(120px) rotateX(0deg) rotateY(0deg);
+    }
+    50% {
+        transform: perspective(120px) rotateX(-180deg) rotateY(0deg);
+    }
+    100% {
+        transform: perspective(120px) rotateX(-180deg) rotateY(-180deg);
+    }
+}
+
+/* Propriétés de la classe loaderFinal */
+
+.loaderFinal {
+    position: fixed;
+    z-index: 99;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Propriétés de la classe loaderFinal ayant la class hidden */
+.loaderFinal.hidden {
+    animation: fadeOut 1s forwards;
+}
+/* Définition de notre animation fadeOut */
+@keyframes fadeOut {
+    100% {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
